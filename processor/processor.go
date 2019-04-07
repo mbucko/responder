@@ -25,6 +25,9 @@ func renameField(jsonMap *map[string]interface{}) {
 			if k == "toCaps" {
 				v2, _ := processString(vCast)
 				(*jsonMap)[k] = v2
+			} else if k == "crash" {
+				fmt.Println("Received crash signal, going to panic.")
+				panic("I am crashing! The payload told me to.")
 			}
 		case map[string]interface{}:
 			renameField(&vCast)

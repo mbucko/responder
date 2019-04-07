@@ -42,7 +42,7 @@ func TestProcessString(t *testing.T) {
 func TestProcess(t *testing.T) {
 	reader := strings.NewReader("{ \"id\": 0, \"toCaps\" : \"nasa\" }")
 	output := process(reader)
-	const expected = "{\"id\":0,\"toCaps\":\"NASA\"}"
+	const expected = "{\"id\":0,\"toCaps\":\"NASA\"}\n"
 	if output != expected {
 		t.Errorf("Test failed, the expected error value '%s' is not '%s'", expected, output)
 	}

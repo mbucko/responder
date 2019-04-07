@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: responder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: responder
+  template:
+    metadata:
+      labels:
+        app: responder
+    spec:
+      containers:
+      - name: responder
+        image: mbucko/responder
+        ports:
+        - containerPort: 8080
