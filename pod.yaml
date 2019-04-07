@@ -1,0 +1,11 @@
+---
+apiVersion: latest
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+    - name: responder
+      image: responder
+      ports:
+        - containerPort: 8080
